@@ -1,0 +1,30 @@
+.App {
+   text-align: center;
+   background-color: #97ce4c;
+}
+
+
+nav {
+   text-align:center;
+   background-color: #0c4120b2;
+   font-size: 40px;
+   font-family: Nunito;
+
+   
+}
+
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
+   grid-gap: 10px; /* Adds a 10px gap between grid items */
+ }
+ 
+ .grid-item {
+   background-color: #eaeaea;
+   padding: 2px;
+ }
+
+ 
+ div {
+    background-color: #0c4120b2;
+ }
