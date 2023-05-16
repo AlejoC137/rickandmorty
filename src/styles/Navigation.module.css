@@ -1,0 +1,28 @@
+
+nav {
+  display: flex;
+  justify-content: center;
+  font-family: Nunito;
+  font-size: 40px;
+  background-color: #769682b2;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  
+  
+  

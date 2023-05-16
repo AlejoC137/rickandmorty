@@ -1,30 +1,33 @@
 .App {
    text-align: center;
-   background-color: #97ce4c;
-}
-
-
-nav {
-   text-align:center;
-   background-color: #0c4120b2;
-   font-size: 40px;
-   font-family: Nunito;
-
-   
+   /* background-color: #97ce4c; */
+   background-image: url('../assets/img/30-fondos-de-pantalla-4k-ultra-hd-de-rick-and-morty-imagenes-de-fondo.-imagen-hd-1080p-de-rick-y-morty.png');
+   background-size: cover;
+   background-position: center;
 }
 
 .grid-container {
+   /* align-content: center; */
    display: grid;
-   grid-template-columns: repeat(3, 1fr); /* Creates three equal-width columns */
-   grid-gap: 10px; /* Adds a 10px gap between grid items */
- }
- 
- .grid-item {
-   background-color: #eaeaea;
-   padding: 2px;
+   /* width: 300px; */
+margin-left: 5%;
+margin-right: 5%;
+   grid-template-columns: repeat(4, 2fr);
+   grid-gap: 100px; 
+   /* border-radius: 20px; */
+}
+
+.grid-item {
+   /* background-color: #eaeaea; */
+   /* padding: 2px; */
+   /* width: 250px; */
+   /* height: 300px; */
+   /* border-radius: 20px; */
  }
 
  
  div {
-    background-color: #0c4120b2;
+    /* background-color: #0c4120b2; */
  }
+
+ 
