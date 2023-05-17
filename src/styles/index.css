@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url('../assets/img/30-fondos-de-pantalla-4k-ultra-hd-de-rick-and-morty-imagenes-de-fondo.-imagen-hd-1080p-de-rick-y-morty.png');
+  background-size: cover;
 }
 
 code {

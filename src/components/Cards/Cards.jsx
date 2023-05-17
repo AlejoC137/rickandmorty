@@ -1,24 +1,28 @@
-import Card from './Card.jsx';
-
+import Card from '../Card/Card.jsx';
+import style from './Cards.module.css'
 
 
 export default function Cards(props) {
-   return <div className="grid-container">
+
+  
+   return <div className={style.Cards}>
      
-   
 {
 props.characters.map(
    (item,index) => 
    <div   key={props.characters[index].id}  > 
-   <Card  className="grid-item"
+   <Card 
 
-     name={props.characters[index].name}
+   name={props.characters[index].name}
    status={props.characters[index].status}
    species={props.characters[index].species}
    gender={props.characters[index].gender}
    origin={props.characters[index].origin.name}
    image={props.characters[index].image}
-   onClose={() => window.alert('Emulamos que se cierra la card')}
+   // onClose={props.character[index].onClose}
+   onClose={props.onClose}
+   onClick={() => window.alert('Emulamos que hace favorito')}
+   id={props.characters[index].id}
 />
  </div>
 )}

@@ -1,0 +1,43 @@
+
+/*   
+h2 {
+    color: blue;
+    font-family: Nunito;
+  } */
+  
+ 
+/* ------------ */
+
+.card {
+  
+  margin:20px;
+  background-size: cover;
+  background-position: center;
+  /* border: 1px rgb(133, 20, 20) solid; */
+  border-radius: 35px,
+}
+.container {
+  margin: 20px;
+  background-image: url('../../assets/img/pxfuel.jpg');
+  position: relative;
+  
+  width: 300px;
+/* align-items: start; */
+  /* border: 1px rgb(133, 20, 20) solid; */
+  border-radius: 35px;
+  &:hover {
+      box-shadow: 0 0 50px greenyellow;
+      border: 20px;
+      ;
+  }
+}
+
+.ima {
+  border-radius: 15px;
+  width:260px;
+ margin: 20px;
+ align-items: center;
+}
+
+
+
