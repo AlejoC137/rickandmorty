@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { number } from 'mathjs';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import styles from './App.module.css';
 import Cards from './Cards/Cards.jsx';
 // import All from '../data/data.js';
@@ -14,9 +14,25 @@ import videoSrc from '../assets/video/Rick-and-Morty-x-Run-The-Jewels-Oh-Mama.mp
 
 
 function App() {
-   
-const [ characters , setCharacters ] = useState([]);
+   const navigate = useNavigate();  
+const [ access , setAccess ] = useState(false);
+const EMAIL = 'dapatinoa@unal.edu.co'
+const PASSWORD = '1035869114'
 
+useEffect(() => {
+   !access && navigate('/');
+}, [access]);
+
+
+   function login(userData) {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/all');
+      }
+   }
+
+
+const [ characters , setCharacters ] = useState([]);
 
 const onSearch = id  => {
 axios(`https://rickandmortyapi.com/api/character/${id}`)
@@ -34,18 +50,24 @@ const onClose = id => {
  setCharacters(characters.filter( char => char.id !== Number(id) ) )
 }
 
+const location = useLocation();
 
    return (
 
    <div className='App'>
-      <video autoPlay className={styles.vid} src={videoSrc} controls   />
-      <Navigation onSearch={onSearch} />
+      <video 
+         // autoPlay 
+         className={styles.vid} 
+         src={videoSrc}   
+         controls   />
+       {location.pathname !== '/' && <Navigation onSearch={onSearch} />}
       <Routes>
          <Route path='/About' element={<About /> }/>
-         <Route path='/' element={<Cards characters={characters}  onClose={onClose}  /> }/>
+         <Route path='/Play' element={<Cards characters={characters}  onClose={onClose}  /> }/>
          <Route path='/detail/:id' element={<Detail /> }/>
          <Route path='/All' element={<All all={'https://rickandmortyapi.com/api/character'} /> }/>
-         <Route path='/login' element={<Login /> }/>
+         <Route path='/' element={<Login login={login} /> }/>
+         {/* <Route path='/home' element={<Home /> }/> */}
       </Routes>     
    </div>
 
@@ -53,3 +75,4 @@ const onClose = id => {
    );}
 
 export default App;
+

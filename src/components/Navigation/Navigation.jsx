@@ -13,10 +13,10 @@ function Navigation(props) {
         <Link to='/about'> About </Link>
       </button>
       <button className={styles.button}>
-        <Link to='/login'> Login </Link>
+        <Link to='/'> LogOut </Link>
       </button>
       <button className={styles.button}>
-        <Link to='/'> Home </Link>
+        <Link to='/play'> Play </Link>
       </button>
       <button className={styles.button}>
         <Link to='/all'> All </Link>

@@ -9,9 +9,9 @@ const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 export function validate(inputs) {
 const  errors = {}
 
-if (!inputs.name) {
-  errors.name = 'Se requiere un nombre';
-}
+// if (!inputs.name) {
+//   errors.name = 'Se requiere un nombre';
+// }
 
 if (!regexEmail.test(inputs.email)) {
   errors.email = 'Debe ser un correo electrónico';
@@ -25,35 +25,38 @@ return errors
 
 }
 
-export default function Login () {
+export default function Login (props) {
 
   const [inputs, setInputs] = React.useState({
-    name: '',
+    // name: '',
     email: '',
     password: '',
  });
  
  const [errors, setErrors] = React.useState({
-  name: '',
+  // name: '',
   email: '',
   password: '',
 
 });
 
 const handleSubmit = event => {
-  event.preventDefault()
+  event.preventDefault();
 
- const errorsArray = Object.values(errors)
-if( errorsArray.length === 0 ) {
-window.alert("Datos completos")
-} else {
-  window.alert("Debe llenar todos los campos")
-}
+  props.login(inputs);
+
+//  const errorsArray = Object.values(errors)
+// if( errorsArray.length === 0 ) {
+// window.alert("Datos completos")
+// } else {
+//   window.alert("Debe llenar todos los campos")
+// }
 
   // console.log(errorsArray);
 }
 
  const handlerChange = event => {
+
 
 
   setInputs({
@@ -78,7 +81,7 @@ window.alert("Datos completos")
     onSubmit={handleSubmit} 
     >
 
-        <label>
+        {/* <label>
            Escribe tu Tag name:  
         </label>
         <input 
@@ -91,7 +94,7 @@ window.alert("Datos completos")
           />
           <p className='danger'>
           {errors.name ? errors.name : null}
-        </p>
+        </p> */}
 
         <label>
           Correo Electrónico: 
