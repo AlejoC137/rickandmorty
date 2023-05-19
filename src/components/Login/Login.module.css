@@ -1,0 +1,33 @@
+.logindiv {
+
+  /* background-color: aqua; */
+  /* justify-content: left; */
+  /* font-family: ; */
+  margin: 20px;
+  background-image: url('../../assets/img/pxfuel.jpg');
+  border-radius: 35px;
+}
+.logform {
+  justify-content: left;
+  margin: 20px;
+}
+/* .warning {
+  border: solid red 1px;
+  border-radius: 0.2em;
+  
+}
+
+.danger {
+  font-size: 10px;
+  color: red;
+  margin-left: 10em;
+} */
+
+
+.Logcards  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: aliceblue;
+  margin: 20px;
+};

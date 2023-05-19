@@ -1,0 +1,8 @@
+.SearchBar {
+font-size: 20px;
+font-family: Nunito;
+background-color: rgb(251, 57, 209);
+height: fit-content;
+border-radius:7px ;
+align-items: centers;
+}

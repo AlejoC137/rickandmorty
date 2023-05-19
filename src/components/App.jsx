@@ -1,30 +1,22 @@
 import axios from 'axios';
 import { useState } from 'react';
-import './App.css';
-import Cards from './Cards/Cards.jsx';
-// import characters from '../data/data.js';
-import Navigation from './Navigation/Navigation.jsx';
 import { number } from 'mathjs';
-
+import { Route, Routes } from 'react-router-dom';
+import styles from './App.module.css';
+import Cards from './Cards/Cards.jsx';
+// import All from '../data/data.js';
+import Navigation from './Navigation/Navigation.jsx';
+import About from './About/About';
+import Detail from './Detail/Detail';
+import All from './All/All.jsx'
+import Login from './Login/Login.jsx'
+import videoSrc from '../assets/video/Rick-and-Morty-x-Run-The-Jewels-Oh-Mama.mp4';
 
 
 function App() {
    
 const [ characters , setCharacters ] = useState([]);
 
-
-const example = {
-   id: 1,
-   name: 'Rick Sanchez',
-   status: 'Alive',
-   species: 'Human',
-   gender: 'Male',
-   origin: {
-      name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1',
-   },
-   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-};
 
 const onSearch = id  => {
 axios(`https://rickandmortyapi.com/api/character/${id}`)
@@ -44,13 +36,20 @@ const onClose = id => {
 
 
    return (
-      <div className='App'>
-         <Navigation onSearch={onSearch} />
-         <Cards 
-         characters={characters}
-         onClose={onClose}
-         />
-      </div>
+
+   <div className='App'>
+      <video autoPlay className={styles.vid} src={videoSrc} controls   />
+      <Navigation onSearch={onSearch} />
+      <Routes>
+         <Route path='/About' element={<About /> }/>
+         <Route path='/' element={<Cards characters={characters}  onClose={onClose}  /> }/>
+         <Route path='/detail/:id' element={<Detail /> }/>
+         <Route path='/All' element={<All all={'https://rickandmortyapi.com/api/character'} /> }/>
+         <Route path='/login' element={<Login /> }/>
+      </Routes>     
+   </div>
+
+
    );}
 
 export default App;

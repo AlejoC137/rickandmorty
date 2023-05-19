@@ -1,31 +1,26 @@
 
-nav {
-  margin: 40px;
+.navDiv {
+  margin: 20px;
   display: flex;
-  
-  justify-content: center;
-  font-family: Nunito;
-  font-size: 35px;
-  background-color: #769682b2;
   border-radius: 35px;
+  padding: 0;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #6ff084b2;
+  border: 20px chartreuse;
+  height: 60px;
 }
 
 
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav li {
-    margin-right: 10px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #000;
-  }
-  
-  
-  
-  
+.button{
+font-size: 20px;
+font-family: Nunito;
+background-color: rgb(251, 57, 209);
+height: fit-content;
+border-radius:7px ;
+align-items: centers;
+
+&:hover {
+  box-shadow: 0 0 50px greenyellow;
+}
+}
