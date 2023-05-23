@@ -12,15 +12,23 @@ function Navigation(props) {
       <button className={styles.button} >
         <Link to='/about'> About </Link>
       </button>
+
       <button className={styles.button}>
         <Link to='/'> LogOut </Link>
       </button>
+
       <button className={styles.button}>
         <Link to='/play'> Play </Link>
       </button>
+
+      <button className={styles.button}>
+        <Link to='/favorites'> Favorites </Link>
+      </button>
+
       <button className={styles.button}>
         <Link to='/all'> All </Link>
       </button>
+
       <SearchBar  onSearch={props.onSearch}  />
     </div>
   );

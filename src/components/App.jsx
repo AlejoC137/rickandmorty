@@ -11,6 +11,7 @@ import Detail from './Detail/Detail';
 import All from './All/All.jsx'
 import Login from './Login/Login.jsx'
 import videoSrc from '../assets/video/Rick-and-Morty-x-Run-The-Jewels-Oh-Mama.mp4';
+import Favorites from './Favoritos/Favorites';
 
 
 function App() {
@@ -67,6 +68,7 @@ const location = useLocation();
          <Route path='/detail/:id' element={<Detail /> }/>
          <Route path='/All' element={<All all={'https://rickandmortyapi.com/api/character'} /> }/>
          <Route path='/' element={<Login login={login} /> }/>
+         <Route path='/favorites' element={<Favorites onClose={onClose} />}/>
          {/* <Route path='/home' element={<Home /> }/> */}
       </Routes>     
    </div>
